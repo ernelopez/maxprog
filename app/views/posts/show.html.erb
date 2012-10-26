@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Obra:</b>
+  <%= @post.obra %>
+</p>
+
+<p>
+  <b>Autor1:</b>
+  <%= @post.autor1 %>
+</p>
+
+<p>
+  <b>Autor2:</b>
+  <%= @post.autor2 %>
+</p>
+
+<p>
+  <b>Autor3:</b>
+  <%= @post.autor3 %>
+</p>
+
+<p>
+  <b>Autor4:</b>
+  <%= @post.autor4 %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @post.fecha %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @post.file %>
+</p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @post.codigo %>
+</p>
+
+<p>
+  <b>Escuela:</b>
+  <%= @post.escuela_id %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @post.curso %>
+</p>
+
+<p>
+  <b>Docente:</b>
+  <%= @post.docente_id %>
+</p>
+
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">La Obra</a></li>
+    <li><a href="#tab2" data-toggle="tab">El Código</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p>
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="span4">
+              <h3><%= Post.find(1).obra %></h3>
+              <p>Autores: <%= Post.find(1).autor1 %> <%= Post.find(1).autor2 %> <%= Post.find(1).autor3 %> <%= Post.find(1).autor4 %></p>
+              <p>Escuela: <%= Post.find(1).escuela.institu %></p>
+              <p>Curso: <%= Post.find(1).curso %></p>
+              <p>Año: <%= Post.find(1).fecha.year %></p>
+              <p>Provincia: <%= Post.find(1).escuela.provi.prov %></p>
+              <p>Fecha de creación: <%= Post.find(1).fecha %></p>
+              <p>Inventario: <%= Post.find(1).id %></p>
+            </div>
+            <div class="span8">
+              <!-- JIUSTON: VER COMO IMPORTAR DE LA BASE DE DATOS EL CODIGO -->
+              <canvas data-processing-sources="/data/randomcolor.pde"></canvas>
+            </div>
+          </div>
+        </div>
+      </p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="span4">
+              <h3><%= Post.find(1).obra %></h3>
+              <p>Autores: <%= Post.find(1).autor1 %> <%= Post.find(1).autor2 %> <%= Post.find(1).autor3 %> <%= Post.find(1).autor4 %></p>
+              <p>Escuela: <%= Post.find(1).escuela.institu %></p>
+              <p>Curso: <%= Post.find(1).curso %></p>
+              <p>Año: <%= Post.find(1).fecha.year %></p>
+              <p>Provincia: <%= Post.find(1).escuela.provi.prov %></p>
+              <p>Fecha de creación: <%= Post.find(1).fecha %></p>
+              <p>Inventario: <%= Post.find(1).id %></p>
+            </div>
+            <div class="span8">
+              <!-- ACA EL CODIGO -->
+              <pre class="prettyprint lang-java"><%= Post.find(1).codigo %></pre>
+            </div>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+class Escuela < ActiveRecord::Base
+  attr_accessible :institu, :provi_id
+  belongs_to :provi, :inverse_of => :escuelas
+  has_many :docentes, :through => :posts
+  has_many :posts
+end

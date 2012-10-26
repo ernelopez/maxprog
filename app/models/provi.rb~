@@ -1,0 +1,4 @@
+class Provi < ActiveRecord::Base
+  attr_accessible :prov
+  has_many :escuelas, :inverse_of => :provi
+end

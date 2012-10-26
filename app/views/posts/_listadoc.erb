@@ -1,0 +1,9 @@
+<table>
+<% @docentes = Docente.all %>
+<% @docentes.each do |docente| %>
+  <tr>
+    <td><%= docente.id %></td>
+    <td><%= docente.name %></td>
+  </tr>
+<% end %>
+</table>

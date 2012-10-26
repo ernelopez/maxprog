@@ -1,0 +1,9 @@
+<table>
+<% @escuelas = Escuela.all %>
+<% @escuelas.each do |escuela| %>
+  <tr>
+    <td><%= escuela.id %></td>
+    <td><%= escuela.institu %></td>
+  </tr>
+<% end %>
+</table>
