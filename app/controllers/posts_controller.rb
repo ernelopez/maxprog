@@ -11,14 +11,7 @@ class PostsController < ApplicationController
   end
 
 
-  def postesc
-    @posts = Post.where(:escuela_id => params[:id])
 
-    respond_to do |format|
-      format.html # postesc.html.erb
-      format.json { render json: @posts }
-    end
-  end
 
 
   # GET /posts/1

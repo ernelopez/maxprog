@@ -63,7 +63,7 @@ Maxprog::Application.routes.draw do
 
   match 'project' => 'project#index'
   match 'listaesc' => 'escuelas#listaesc'
-  match 'postesc' => 'posts#postesc'
+
 
   # match '/public/elproyecto' => 'elproyecto'
 
