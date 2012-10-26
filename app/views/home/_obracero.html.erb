@@ -1,3 +1,7 @@
+<%= @featured_post = Post.last %> <!-- REVISAR: ESTO CLARAMENTE NO VA ACA -->
+
+
+
 <div class="tabbable"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab1" data-toggle="tab">La Obra</a></li>
@@ -9,18 +13,22 @@
         <div class="container-fluid">
           <div class="row-fluid">
             <div class="span4">
-              <h3><%= Post.find(1).obra %></h3>
-              <p>Autores: <%= Post.find(1).autor1 %> <%= Post.find(1).autor2 %> <%= Post.find(1).autor3 %> <%= Post.find(1).autor4 %></p>
-              <p>Escuela: <%= Post.find(1).escuela.institu %></p>
-              <p>Curso: <%= Post.find(1).curso %></p>
-              <p>Año: <%= Post.find(1).fecha.year %></p>
-              <p>Provincia: <%= Post.find(1).escuela.provi.prov %></p>
-              <p>Fecha de creación: <%= Post.find(1).fecha %></p>
-              <p>Inventario: <%= Post.find(1).id %></p>
+              <h3><%= @featured_post.obra %></h3>
+              <p>Autores: <%= @featured_post.autor1 %> <%= @featured_post.autor2 %> <%= @featured_post.autor3 %> <%= @featured_post.autor4 %></p>
+              <p>Escuela: <%= @featured_post.escuela.institu %></p>
+              <p>Curso: <%= @featured_post.curso %></p>
+              <p>Año: <%= @featured_post.fecha.year %></p>
+              <p>Provincia: <%= @featured_post.escuela.provi.prov %></p>
+              <p>Fecha de creación: <%= @featured_post.fecha %></p>
+              <p>Inventario: <%= @featured_post.id %></p>
             </div>
             <div class="span8">
-              <!-- JIUSTON: VER COMO IMPORTAR DE LA BASE DE DATOS EL CODIGO -->
-              <canvas data-processing-sources="/data/randomcolor.pde"></canvas>
+              <!-- REVISAR: MUESTRA BASURA EN PANTALLA -->
+
+              <%= aFile = File.new("public/data/code.pde", "w") %>
+              <%= aFile.write(@featured_post.codigo) %>
+              <%= aFile.close %>
+              <canvas data-processing-sources="/data/code.pde"></canvas>
             </div>
           </div>
         </div>
@@ -31,18 +39,19 @@
         <div class="container-fluid">
           <div class="row-fluid">
             <div class="span4">
-              <h3><%= Post.find(1).obra %></h3>
-              <p>Autores: <%= Post.find(1).autor1 %> <%= Post.find(1).autor2 %> <%= Post.find(1).autor3 %> <%= Post.find(1).autor4 %></p>
-              <p>Escuela: <%= Post.find(1).escuela.institu %></p>
-              <p>Curso: <%= Post.find(1).curso %></p>
-              <p>Año: <%= Post.find(1).fecha.year %></p>
-              <p>Provincia: <%= Post.find(1).escuela.provi.prov %></p>
-              <p>Fecha de creación: <%= Post.find(1).fecha %></p>
-              <p>Inventario: <%= Post.find(1).id %></p>
+              <h3><%= @featured_post.obra %></h3>
+              <p>Autores: <%= @featured_post.autor1 %> <%= @featured_post.autor2 %> <%= @featured_post.autor3 %> <%= @featured_post.autor4 %></p>
+              <p>Escuela: <%= @featured_post.escuela.institu %></p>
+              <p>Curso: <%= @featured_post.curso %></p>
+              <p>Año: <%= @featured_post.fecha.year %></p>
+              <p>Provincia: <%= @featured_post.escuela.provi.prov %></p>
+              <p>Fecha de creación: <%= @featured_post.fecha %></p>
+              <p>Inventario: <%= @featured_post.id %></p>
             </div>
             <div class="span8">
               <!-- ACA EL CODIGO -->
-              <pre class="prettyprint lang-java"><%= Post.find(1).codigo %></pre>
+              
+              <pre class="prettyprint lang-java"><%= @featured_post.codigo %></pre>
             </div>
           </div>
         </div>
@@ -50,4 +59,5 @@
     </div>
   </div>
 </div>
+
 
