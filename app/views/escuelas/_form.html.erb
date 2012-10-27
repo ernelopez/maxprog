@@ -17,8 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :provi_id %><br />
-    <%= f.number_field :provi_id %>
-    <%= render 'listaprov' %>
+    <%= f.select( :provi_id, options_for_select( Provi.all.map { |p| [p.prov, p.id] } ) ) %>
   </div>
 
   <div class="actions">
