@@ -11,48 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :obra %><br />
-    <%= f.text_field :obra %>
-  </div>
-  <div class="field">
-    <%= f.label :autor1 %><br />
-    <%= f.text_field :autor1 %>
-  </div>
-  <div class="field">
-    <%= f.label :autor2 %><br />
-    <%= f.text_field :autor2 %>
-  </div>
-  <div class="field">
-    <%= f.label :autor3 %><br />
-    <%= f.text_field :autor3 %>
-  </div>
-  <div class="field">
-    <%= f.label :autor4 %><br />
-    <%= f.text_field :autor4 %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha %><br />
-    <%= f.date_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :codigo %><br />
-    <%= f.text_area :codigo %>
-  </div>
-  <div class="field">
-    <%= f.label :escuela_id %><br />
-    <%= f.number_field :escuela_id %>
-    <%= render 'listaesc' %>
-  </div>
-  <div class="field">
-    <%= f.label :curso %><br />
-    <%= f.text_field :curso %>
-  </div>
-  <div class="field">
-    <%= f.label :docente_id %><br />
-    <%= f.number_field :docente_id %>
-    <%= render 'listadoc' %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<table class="table">
+  <tr class="field">
+    <td><%= f.label :obra %></td>
+    <td><%= f.text_field :obra %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :autor1 %></td>
+    <td><%= f.text_field :autor1 %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :autor2 %></td>
+    <td><%= f.text_field :autor2 %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :autor3 %></td>
+    <td><%= f.text_field :autor3 %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :autor4 %></td>
+    <td><%= f.text_field :autor4 %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :fecha %></td>
+    <td><%= f.date_select :fecha %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :codigo %></td>
+    <td><%= f.text_area :codigo %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :escuela_id %></td>
+    <td><%= f.select( :escuela_id, options_for_select( Escuela.all.map { |e| [e.institu, e.id] } ) ) %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :curso %></td>
+    <td><%= f.text_field :curso %></td>
+  </tr>
+  <tr class="field">
+    <td><%= f.label :docente_id %></td>
+    <td><%= f.select( :docente_id, options_for_select( Docente.all.map { |d| [d.name, d.id] } ) ) %></td>
+  <tr class="actions">
+    <td><%= f.submit %></td>
+    <td></td>
+  </tr>
+</table>
+
 <% end %>
