@@ -1,6 +1,9 @@
-<h1>Listing posts</h1>
+<div class="container">
+<div class="well">
 
-<table>
+<h1>Listado de posts</h1>
+
+<table class="table">
   <tr>
     <th>Id</th>
     <th>Obra</th>
@@ -9,8 +12,6 @@
     <th>Autor3</th>
     <th>Autor4</th>
     <th>Fecha</th>
-    <th>File</th>
-    <!-- <th>Codigo</th> -->
     <th>EscuelaId</th>
     <th>Escuela</th>
     <th>Curso</th>
@@ -31,8 +32,6 @@
     <td><%= post.autor3 %></td>
     <td><%= post.autor4 %></td>
     <td><%= post.fecha %></td>
-    <td><%= post.file %></td>
-    <!-- <td><%= post.codigo %></td>  -->
     <td><%= post.escuela_id %></td>
     <td><%= post.escuela.institu %></td>
     <td><%= post.curso %></td>
@@ -49,3 +48,6 @@
 <br />
 
 <%= link_to 'New Post', new_post_path %>
+
+</div>
+</div>
