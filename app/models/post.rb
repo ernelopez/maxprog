@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :autor1, :autor2, :autor3, :autor4, :codigo, :docente_id, :escuela_id, :fecha, :file, :obra, :curso
+  attr_accessible :autor1, :autor2, :autor3, :autor4, :codigo, :docente_id, :escuela_id, :fecha, :file, :obra, :curso, :comentario
 
   validates :autor1, :presence => true
   validates :codigo, :presence => true

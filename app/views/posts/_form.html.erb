@@ -51,6 +51,10 @@
   <tr class="field">
     <td><%= f.label :docente_id %></td>
     <td><%= f.select( :docente_id, options_for_select( Docente.all.map { |d| [d.name, d.id] } ) ) %></td>
+  <tr class="field">
+    <td><%= f.label :comentario %></td>
+    <td><%= f.text_area :comentario %></td>
+  </tr>
   <tr class="actions">
     <td><%= f.submit %></td>
     <td></td>
