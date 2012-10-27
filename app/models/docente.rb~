@@ -1,5 +1,0 @@
-class Docente < ActiveRecord::Base
-  attr_accessible :name, :pass, :user
-  has_many :posts
-  has_many :escuelas, :through => :posts
-end
