@@ -58,11 +58,14 @@ Maxprog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to  => 'home#index'
   match '/' => "home#index", :as => :home
 
-  match 'project' => 'project#index'
-  match 'listaesc' => 'escuelas#listaesc'
+  match 'project'        => 'project#index'
+  match 'listaesc'       => 'escuelas#listaesc'
+
+  # Send project code (why post are project?)
+  match '/posts/:id/code' => 'posts#show_code', :as => 'show_code'
 
 
   # match '/public/elproyecto' => 'elproyecto'

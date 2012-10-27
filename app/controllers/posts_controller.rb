@@ -10,10 +10,6 @@ class PostsController < ApplicationController
     end
   end
 
-
-
-
-
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -23,6 +19,14 @@ class PostsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @post }
     end
+  end
+
+  def show_code
+    code = '';
+    if post = Post.find(params[:id])
+      code = post.codigo
+    end
+    render :text => code
   end
 
   # GET /posts/new

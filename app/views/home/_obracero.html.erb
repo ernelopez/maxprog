@@ -19,11 +19,7 @@
               <p>Inventario: <%= @featured_post.id %></p>
             </div>
             <div class="span8">
-              <!-- REVISAR: MUESTRA BASURA EN PANTALLA -->
-              <%= aFile = File.new("public/data/code.pde", "w") %>
-              <%= aFile.write(@featured_post.codigo) %>
-              <%= aFile.close %>
-              <canvas data-processing-sources="/data/code.pde"></canvas>
+              <canvas data-processing-sources="<%= show_code_path(@featured_post.id) %>"></canvas>
             </div>
           </div>
         </div>
