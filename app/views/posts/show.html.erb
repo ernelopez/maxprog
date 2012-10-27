@@ -20,11 +20,7 @@
               <p>Inventario: <%= @post.id %></p>
             </div>
             <div class="span8">
-              <!-- exporto el texto a un archivo, lo importo con processing.js -->
-              <%= aFile = File.new("public/data/code.pde", "w") %> <!-- revisar esto, muestra basura en pantalla -->
-              <%= aFile.write(@post.codigo) %>
-              <%= aFile.close %>
-              <canvas data-processing-sources="/data/code.pde"></canvas>              
+               <canvas data-processing-sources="<%= show_code_path(@post.id) %>"></canvas>
             </div>
           </div>
         </div>
